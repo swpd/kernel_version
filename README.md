@@ -33,7 +33,7 @@ run the following command:
 yes, that's it. if no errors occur our web service shall be up and running.
 
 ## Serving requests ##
-use your favorite client to visit the following URL to retrieve the version 
+use your favorite client to visit the following URL to retrieve the version
 information of server:
 
     http://localhost:2001/kernel_version/

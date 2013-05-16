@@ -25,7 +25,7 @@ void cb_kernel_version(duda_request_t *dr)
          *  on Linux, the information stored in /proc/version are seperated by
          *  space, and the version information usually comes after string
          *  "Linux version ": Linux version 3.9.2-1-ARCH (nobody@thomas) ...
-         */ 
+         */
         beg = monkey->str_search(buffer, LINUX_VERSION, MK_STR_SENSITIVE);
         if (beg >= 0) {
             beg += strlen(LINUX_VERSION);
@@ -44,7 +44,7 @@ void cb_kernel_version(duda_request_t *dr)
     response->http_status(dr, 200);
     response->printf(dr, "Kernel Version: %s", kernel_version);
     response->end(dr, NULL);
-    
+
     /* free allocated resource */
     if (fp) {
         fclose(fp);
