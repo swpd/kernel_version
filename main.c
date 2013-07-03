@@ -43,14 +43,14 @@ void cb_kernel_version(duda_request_t *dr)
     /* send kernel version */
     response->http_status(dr, 200);
     response->printf(dr, "Kernel Version: %s", kernel_version);
-    response->end(dr, NULL);
+    response->finalize(dr, NULL);
 
     /* free allocated resource */
     if (fp) {
         fclose(fp);
     }
     if (kernel_version) {
-        free(kernel_version);
+        monkey->mem_free(kernel_version);
     }
 }
 
